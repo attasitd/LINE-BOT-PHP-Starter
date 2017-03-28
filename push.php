@@ -1,28 +1,21 @@
 <?php
- 
-$strAccessToken = "wgKVfqXwuHW+tQtWBfy1cIlhxp+AFoyrbBoKo3yrZ6up2lBdy9Du+ZAkzXKnDR1FNB1tDckxMJ1Owy2DbxBMFM8+uoR8I6D57tHWVhyCFBMPG6QV+sejtyV2nJZM+WlXf1ljEVNyWYOmli1g8uPG3QdB04t89/1O/w1cDnyilFU=";
- 
-$strUrl = "https://api.line.me/v2/bot/message/push";
- 
-$arrHeader = array();
-$arrHeader[] = "Content-Type: application/json";
-$arrHeader[] = "Authorization: Bearer {$strAccessToken}";
- 
-$arrPostData = array();
-$arrPostData['to'] = "U6f60b2486506604454cf305a9f6715a9";
-$arrPostData['messages'][0]['type'] = "text";
-$arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message";
- 
- 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL,$strUrl);
-curl_setopt($ch, CURLOPT_HEADER, false);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arrPostData));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-$result = curl_exec($ch);
-curl_close ($ch);
- 
-?>
+
+// example: https://github.com/onlinetuts/line-bot-api/blob/master/php/example/chapter-02.php
+
+include ('line-bot-api/php/line-bot.php');
+
+$channelSecret = 'NuIDf8sTPzPUdoIgj4fd8OFtNSVJe8HWwTwMzIeAL0I';
+$access_token  = 'wgKVfqXwuHW+tQtWBfy1cIlhxp+AFoyrbBoKo3yrZ6up2lBdy9Du+ZAkzXKnDR1FNB1tDckxMJ1Owy2DbxBMFM8+uoR8I6D57tHWVhyCFBMPG6QV+sejtyV2nJZM+WlXf1ljEVNyWYOmli1g8uPG3QdB04t89/1O/w1cDnyilFU=';
+
+$bot = new BOT_API($channelSecret, $access_token);
+	
+$bot->sendMessageNew('U6f60b2486506604454cf305a9f6715a9', 'Hello World !!');
+
+if ($bot->isSuccess()) {
+	echo 'Succeeded!';
+	exit();
+}
+
+// Failed
+echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
+exit();
