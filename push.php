@@ -1,5 +1,5 @@
-<?php
- 
+<?php 
+
 $strAccessToken = "wgKVfqXwuHW+tQtWBfy1cIlhxp+AFoyrbBoKo3yrZ6up2lBdy9Du+ZAkzXKnDR1FNB1tDckxMJ1Owy2DbxBMFM8+uoR8I6D57tHWVhyCFBMPG6QV+sejtyV2nJZM+WlXf1ljEVNyWYOmli1g8uPG3QdB04t89/1O/w1cDnyilFU=";
  
 $strUrl = "https://api.line.me/v2/bot/message/push";
@@ -14,8 +14,8 @@ $arrPostData = array();
 //$url_a="http://rms.nawamin.ac.th/rms2line/read_userid.php";
 //$data_a=file_get_contents($url_a);
 
-echo $data_a;
-$arrPostData['to'] = $_GET["userid"];;
+//echo $data_a;
+$arrPostData['to'] = $_GET["userid"];
 $arrPostData['messages'][0]['type'] = "text";
 $arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message 22";
  
@@ -31,5 +31,5 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close ($ch);
  
-echo "<BR>OK.";
+echo "OK.";
 ?>
