@@ -15,6 +15,7 @@ $arrPostData = array();
  $data_a=file_get_contents($url_a);
 
  echo $data_a;
+$arrPostData['to'] = $data_a
 $arrPostData['messages'][0]['type'] = "text";
 $arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message 22";
  
