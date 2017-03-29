@@ -32,6 +32,8 @@ if (!is_null($events['events'])) {
 				$text = $text2 . '  หมายเลขลงทะเบียนของท่านไม่ถูกต้อง  :กรุณาติดต่อผู้ดูแลระบบ [Attasit Datsong:HTTP-Err]';
 			}
 			
+			$text = $text2 . '  หมายเลขลงทะเบียนเรียบร้อยแล้ว....  :มีปัญหากรุณาติดต่อผู้ดูแลระบบ [Attasit Datsong:OK]';
+			
 			
 			// Build message to reply back
 			$messages = [
