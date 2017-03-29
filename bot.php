@@ -25,11 +25,11 @@ if (!is_null($events['events'])) {
 				$data_a=file_get_contents($url_a);
 				echo $data_a;
 			}else{
-				$text = $text2 . '  หมายเลขลงทะเบียนของท่านไม่ถูกต้อง:กรุณาติดต่อผู้ดูแลระบบ [Attasit Datsong:ID-Err]';
+				$text = $text2 . '  หมายเลขลงทะเบียนของท่านไม่ถูกต้อง  :กรุณาติดต่อผู้ดูแลระบบ [Attasit Datsong:ID-Err]';
 			}
 			
 			if ($data_a != "OK"){
-				$text = $text2 . '  หมายเลขลงทะเบียนของท่านไม่ถูกต้อง:กรุณาติดต่อผู้ดูแลระบบ [Attasit Datsong:HTTP-Err]';
+				$text = $text2 . '  หมายเลขลงทะเบียนของท่านไม่ถูกต้อง  :กรุณาติดต่อผู้ดูแลระบบ [Attasit Datsong:HTTP-Err]';
 			}
 			
 			
