@@ -16,7 +16,23 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
-			$text =  "สวัสดี ID คุณคือ ".$events['events'][0]['source']['userId'];
+			$text2 =  "ยินดีต้อนรับเข้าสู่ระบบแจ้งเตือนงานสารบรรณ rms.nawamin.ac.th";
+			$user_id = $events['events'][0]['source']['userId'];
+			
+			if (strlen($text)==13){
+				$url_a="http://rms.nawamin.ac.th/rms2line/register_userid.php?id=$text&userid=$user_id";
+				//echo "$url_a";
+				$data_a=file_get_contents($url_a);
+				echo $data_a;
+			}else{
+				$text = $text2 . '  หมายเลขลงทะเบียนของท่านไม่ถูกต้อง:กรุณาติดต่อผู้ดูแลระบบ [Attasit Datsong:ID-Err]'
+			}
+			
+			if ($data_a != "OK"){
+				$text = $text2 . '  หมายเลขลงทะเบียนของท่านไม่ถูกต้อง:กรุณาติดต่อผู้ดูแลระบบ [Attasit Datsong:HTTP-Err]'
+			}
+			
+			
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
