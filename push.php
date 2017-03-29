@@ -17,7 +17,7 @@ $arrPostData = array();
 //echo $data_a;
 $arrPostData['to'] = $_GET["userid"];
 $arrPostData['messages'][0]['type'] = "text";
-$arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message 22";
+$arrPostData['messages'][0]['text'] = $_GET["text"];;
  
  
 $ch = curl_init();
