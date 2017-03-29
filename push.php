@@ -14,8 +14,8 @@ $arrPostData = array();
  $url_a="http://rms.nawamin.ac.th/rms2line/read_userid.php";
  $data_a=file_get_contents($url_a);
 
- echo $data_a;
-$arrPostData['to'] = $data_a
+echo $data_a;
+$arrPostData['to'] = $data_a;
 $arrPostData['messages'][0]['type'] = "text";
 $arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message 22";
  
@@ -31,4 +31,5 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close ($ch);
  
+echo "OK.";
 ?>
