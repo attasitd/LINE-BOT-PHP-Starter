@@ -25,9 +25,11 @@ if (!is_null($events['events'])) {
 				$data_a=file_get_contents($url_a);
 				echo $data_a;
 				if ($data_a != "OK"){
-					$text = $text2 . '  หมายเลขลงทะเบียนของท่านไม่ถูกต้อง  <กรุณาติดต่อผู้ดูแลระบบ [Attasit Datsong:HTTP-Err]>';
-				}else{
 					$text = $text2 . '  หมายเลขลงทะเบียนเรียบร้อยแล้ว....  <หากมีปัญหากรุณาติดต่อผู้ดูแลระบบ [Attasit Datsong:OK]>';
+				}else if ($data_a != "DUP"){
+					$text = $text2 . '  หมายเลขลงทะเบียนของท่านเคยลงทะเบียนแล้ว <กรุณาติดต่อผู้ดูแลระบบ [Attasit Datsong:HTTP-Dup]>';
+				}else{
+					$text = $text2 . '  หมายเลขลงทะเบียนของท่านไม่ถูกต้อง  <กรุณาติดต่อผู้ดูแลระบบ [Attasit Datsong:HTTP-Err]>';
 				}				
 			}else{
 				$text = $text2 . '  หมายเลขลงทะเบียนของท่านไม่ถูกต้อง  <กรุณาติดต่อผู้ดูแลระบบ [Attasit Datsong:ID-Err]>';
