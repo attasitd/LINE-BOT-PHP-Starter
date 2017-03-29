@@ -16,7 +16,7 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
-			$text = 'สวัสดีสสกดเวกเสง';
+			$text =  "สวัสดี ID คุณคือ ".$events['events'][0]['source']['userId'];
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
