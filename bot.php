@@ -16,7 +16,7 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
-			$text2 =  "ยินดีต้อนรับเข้าสู่ระบบแจ้งเตือนงานสารบรรณ วิทยาลัยการอาชีพนวมินทราชินีแม่ฮ่องสอน [rms.nawamin.ac.th]";
+			$text2 =  "ยินดีต้อนรับเข้าสู่ระบบแจ้งเตือนงานสารบรรณ วิทยาลัยการอาชีพนวมินทราชินีแม่ฮ่องสอน[rms.nawamin.ac.th]";
 			$user_id = $events['events'][0]['source']['userId'];
 			
 			if (strlen($text)==13){
