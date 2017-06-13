@@ -19,7 +19,7 @@ if (!is_null($events['events'])) {
 			$text2 =  "ยินดีต้อนรับเข้าสู่ระบบแจ้งเตือนงานสารบรรณ วิทยาลัยการอาชีพนวมินทราชินีแม่ฮ่องสอน [rms.nawamin.ac.th]";
 			$user_id = $events['events'][0]['source']['userId'];
 			
-			if (strlen($text)==13){
+			if (strlen($text)==16){
 				$url_a="http://rms.nawamin.ac.th/rms2line/register_userid.php?id=$text&userid=$user_id";
 				//echo "$url_a";
 				$data_a=file_get_contents($url_a);
@@ -34,7 +34,7 @@ if (!is_null($events['events'])) {
 					$text = $text2 . '  หมายเลขลงทะเบียนของท่านไม่ถูกต้อง... กรุณาติดต่อผู้ดูแลระบบ<จัดทำโดยงานศูนย์ข้อมูลสารสนเทศ วิทยาลัยการอาชีพนวมินทราชินีแม่ฮ่องสอน [Attasit Datsong:HTTP-Err]>';
 				}				
 			}else{
-				$text = $text2 . '  หมายเลขลงทะเบียนของท่านไม่ถูกต้อง... กรุณาติดต่อผู้ดูแลระบบ<จัดทำโดยงานศูนย์ข้อมูลสารสนเทศ วิทยาลัยการอาชีพนวมินทราชินีแม่ฮ่องสอน [Attasit Datsong:ID-Err]>';
+				$text = $text2 . '  หมายเลขลงทะเบียนของท่านไม่ถูกต้อง... กรุณาติดต่อผู้ดูแลระบบ<จัดทำโดยงานศูนย์ข้อมูลสารสนเทศ วิทยาลัยการอาชีพนวมินทราชินีแม่ฮ่องสอน [Attasit Datsong:ID-Hr]>';
 			}
 			
 		
