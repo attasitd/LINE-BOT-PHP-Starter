@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
 			$user_id = $events['events'][0]['source']['userId'];
 			
 			if (strlen($text)==16){
-				$url_a="http://rms.nawamin.ac.th/rms2line/register_userid.php?id=$text&userid=$user_id";
+				$url_a="http://smis.nawamin.ac.th/mis/smis2line/register_userid.php?id=$text&userid=$user_id";
 				//echo "$url_a";
 				$data_a=file_get_contents($url_a);
 				echo $data_a;
